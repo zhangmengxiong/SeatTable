@@ -1,14 +1,13 @@
 package com.qfdqc.views.demo;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 import com.qfdqc.views.seattable.SeatTable;
 
-import java.util.ArrayList;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     public SeatTable seatTableView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public boolean isValidSeat(int row, int column) {
-                if(column==2) {
+                if (column == 2) {
                     return false;
                 }
                 return true;
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public boolean isSold(int row, int column) {
-                if(row==6&&column==6){
+                if (row == 6 && column == 6) {
                     return true;
                 }
                 return false;
@@ -51,10 +50,8 @@ public class MainActivity extends AppCompatActivity {
             public String[] checkedSeatTxt(int row, int column) {
                 return null;
             }
-
         });
-        seatTableView.setData(10,15);
-
+        seatTableView.setData(10, 15);
     }
 
 }
